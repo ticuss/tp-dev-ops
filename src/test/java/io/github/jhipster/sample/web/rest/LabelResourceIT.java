@@ -87,7 +87,7 @@ class LabelResourceIT {
 
         // Validate the Label in the database
         List<Label> labelList = labelRepository.findAll();
-        assertThat(labelList).hasSize(databaseSizeBeforeCreate + 1);
+        assertThat(labelList).hasSize(databaseSizeBeforeCreate);
         Label testLabel = labelList.get(labelList.size());
         assertThat(testLabel.getLabel()).isEqualTo(DEFAULT_LABEL);
     }
