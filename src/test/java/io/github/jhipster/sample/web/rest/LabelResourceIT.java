@@ -272,7 +272,7 @@ class LabelResourceIT {
         // Validate the Label in the database
         List<Label> labelList = labelRepository.findAll();
         assertThat(labelList).hasSize(databaseSizeBeforeUpdate);
-        Label testLabel = labelList.get(labelList.size() - 1);
+        Label testLabel = labelList.get(labelList.size());
         assertThat(testLabel.getLabel()).isEqualTo(DEFAULT_LABEL);
     }
 
@@ -301,7 +301,7 @@ class LabelResourceIT {
         // Validate the Label in the database
         List<Label> labelList = labelRepository.findAll();
         assertThat(labelList).hasSize(databaseSizeBeforeUpdate);
-        Label testLabel = labelList.get(labelList.size() - 1);
+        Label testLabel = labelList.get(labelList.size());
         assertThat(testLabel.getLabel()).isEqualTo(UPDATED_LABEL);
     }
 
