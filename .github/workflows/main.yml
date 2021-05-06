@@ -33,3 +33,20 @@ jobs:
       run: npm install
     - name: Run test 
       run: npm run ci:frontend:test
+    - name: Change the permission
+      run: chmod +x mvnw && npm run ci:backend:test
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
