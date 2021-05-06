@@ -35,6 +35,14 @@ jobs:
       run: npm run ci:frontend:test
     - name: Change the permission
       run: chmod +x mvnw && npm run ci:backend:test
+    - name: Prépare un .jar comme si il partait en prod
+      run: ./mvnw -ntp verify -DskipTests --batch-mode "-Pprod" "-Pe2e" "-Denforcer.skip=true"*
+    - name: Créé une BDD et lance le .jar dans un docker
+      run: npm run ci:e2e:prepare:docker
+    - name: Lance les tests
+      run:  npm run ci:e2e:run
+    - name: Met fin au docker et nettoie le tout.
+      run: npm run ci:e2e:teardown
       
       
       
